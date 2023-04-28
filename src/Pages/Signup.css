@@ -1,0 +1,59 @@
+.signup-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(147, 143, 143, 0.811);
+}
+
+.signup-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 50vw;
+    height: 70vh;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.signup-box .signup-creds{
+    height: 70%;
+    width: 50%;
+    text-align: center;
+}
+
+.signup-box .signup-image{
+    height: 100%;
+    width: 50%;
+    background-image: url(../Assests/Images/LoginImg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.signup-creds .signup-link{
+    margin: auto;
+    text-align: center;
+}
+
+.signup-creds p{
+    font-weight: 100;
+    font-size: small;
+    margin-top: 1rem;
+}
+
+.signup-creds .signup-btn{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.signup-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}

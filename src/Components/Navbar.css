@@ -1,0 +1,31 @@
+nav{
+    height: 5rem;
+    width: 100vw;
+    background-color: #FFD700;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    position: fixed;
+    padding: 2rem;
+    top:0;
+
+}
+
+.logo{
+    height: 4rem;
+    width: 17rem;
+    background-image: url(../Assests/Images/Logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20rem;
+}
+
+/* .auth-box{
+    margin-right: 2rem;
+} */
+
+.auth-box .auth-btn{
+    border-radius: 20px;
+    margin: 0.2rem;
+}
