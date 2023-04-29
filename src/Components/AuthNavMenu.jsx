@@ -11,7 +11,6 @@ import Tooltip from "@mui/material/Tooltip";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import Divider from "@mui/material/Divider";
-import Snack from "./Snackbar";
 import "./AuthNavMenu.css";
 
 function AuthNavMenu(props) {
@@ -26,30 +25,18 @@ function AuthNavMenu(props) {
   };
 
   const navigate = useNavigate();
-  const [openSnack, setOpenSnack] = useState(false);
-  const [snacktext, setSnacktext] = useState({
-    type: "",
-    msg: "",
-  });
-
+  
   const Navigating = () => {
     navigate("/");
   };
 
-  const handleSignupSnack = () => {
-    setOpenSnack(true);
-  };
+  
 
   const handleLogout = () => {
     signOut(auth)
       .then(async() => {
-        setSnacktext({
-          type: "info",
-          msg: "You have successfully Logged Out !!!...",
-        });
         console.log("logged Out ");
         setUsername("")
-        handleSignupSnack();
         setTimeout(Navigating, 2000);
       })
       .catch((err) => {
@@ -113,12 +100,6 @@ function AuthNavMenu(props) {
           </Button>
         </div>
       </nav>
-      <Snack
-        type={snacktext.type}
-        msg={snacktext.msg}
-        open={openSnack}
-        setOpen={setOpenSnack}
-      />
     </>
   );
 }

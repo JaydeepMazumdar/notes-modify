@@ -10,7 +10,6 @@ import { auth } from "./firebase";
 import "./App.css";
 
 function App() {
-  // const [isAuthenticated, setIsAuthenticated] = useState("false");
   const [profile, setProfile] = useState("");
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
