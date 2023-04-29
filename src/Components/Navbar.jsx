@@ -3,14 +3,13 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-
-function Navbar() {
+function Navbar(props) {
   return (
     <div>
       <nav>
-        <Link to="/">
+        <Link to="/" onClick={()=>window.location.reload(true)} >
           <div className="logo"></div>
-        </Link>
+        </Link> 
         <div className="auth-box">
           <Link to="/Login">
             <Button

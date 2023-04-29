@@ -1,0 +1,23 @@
+.logout-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settings{
+    margin: 0 1rem !important;
+}
+
+.menu-list{
+    padding: 0.5rem 1rem !important;
+    margin: 2rem 0;
+    height: 12rem !important;
+}
+
+.divider{
+    padding: 0 !important;
+    overflow-y: hidden;
+    margin: 0.2rem 0 !important;
+    margin: auto;
+
+}

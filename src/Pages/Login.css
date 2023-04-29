@@ -57,3 +57,20 @@
     top: 1rem;
     right: 1rem;
 }
+
+.err-msg{
+    color: red;
+    font-size: 0.7rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;    
+}
+
+.forgot-btn{
+    border: 2px solid red !important;
+    color: red !important;
+    font-size: 0.8rem !important;
+    padding: 0.1rem 0.5rem !important;
+    margin-top: 1rem !important;
+
+}

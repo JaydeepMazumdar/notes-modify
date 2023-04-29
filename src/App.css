@@ -4,3 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+p,h1,h3,span,div{
+    cursor: default;
+}

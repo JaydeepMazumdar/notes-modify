@@ -19,6 +19,7 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20rem;
+    cursor: pointer;
 }
 
 /* .auth-box{
