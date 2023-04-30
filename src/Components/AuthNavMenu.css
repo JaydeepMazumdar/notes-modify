@@ -1,3 +1,7 @@
+.auth-nav{
+    position: static;
+}
+
 .logout-menu{
     display: flex;
     flex-direction: row;

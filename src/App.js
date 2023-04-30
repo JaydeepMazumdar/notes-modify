@@ -4,22 +4,25 @@ import Navbar from "./Components/Navbar";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
-// import WorkingArea from "./Pages/WorkingArea";
+import WorkingArea from "./Pages/WorkingArea";
 import AuthNavMenu from "./Components/AuthNavMenu";
 import { auth } from "./firebase";
 import "./App.css";
 
 function App() {
   const [profile, setProfile] = useState("");
+  const [email, setEmail] = useState("");
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
         setProfile(user.displayName);
+        setEmail(user.email);
       } else {
         setProfile("");
       }
     });
   },[]);
+
 
   return (
     <>
@@ -42,7 +45,7 @@ function App() {
               element={
                 <>
                   <AuthNavMenu username = {profile} setUsername = {setProfile} />
-                  {/* <WorkingArea /> */}
+                  <WorkingArea email = {email} />
                 </>
               }
             />}

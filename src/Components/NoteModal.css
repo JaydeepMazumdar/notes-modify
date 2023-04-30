@@ -1,0 +1,44 @@
+.edit-modal {
+  width: 50vw;
+  height: 80vh;
+  background: white;
+  position: relative;
+}
+
+.note-textarea {
+  border-radius: 5px;
+  color: grey;
+  border: 0.1px solid lightgray;
+  padding: 1rem;
+  height:  25rem;
+}
+
+.note-textarea:focus {
+  border: 2px solid purple;
+  outline: 0;
+  box-shadow: none;
+}
+
+.note-textarea:focus::-webkit-input-placeholder{
+    opacity: 0;
+}
+
+.note-textarea:focus::-moz-placeholder{
+    opacity: 0;
+}
+
+.note-textarea:focus::-ms-placeholder{
+    opacity: 0;
+}
+
+.note-heading{
+    color: black;
+}
+
+.control-buttons{
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+}

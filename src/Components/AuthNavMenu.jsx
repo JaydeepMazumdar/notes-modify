@@ -46,7 +46,7 @@ function AuthNavMenu(props) {
 
   return (
     <>
-      <nav>
+      <nav className="auth-nav">
         <Link to="/Notes" onClick={() => window.location.reload(true)}>
           <div className="logo"></div>
         </Link>
