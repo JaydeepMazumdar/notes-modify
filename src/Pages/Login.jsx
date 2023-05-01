@@ -189,6 +189,11 @@ function Login(props) {
               </Link>
             </div>
           </div>
+          <div className="login-close out-close">
+              <Link to="/">
+                <CloseRoundedIcon />
+              </Link>
+          </div>
         </div>
         <Snack
           type={snacktext.type}

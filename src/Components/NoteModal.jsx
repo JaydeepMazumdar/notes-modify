@@ -36,17 +36,11 @@ function NoteModal(props) {
 
   const savedata = () => {
     if (!values.text && !values.title && !values.id) return;
-    // updateArr([...arr, values]);
-    // dataupload(arr);
     let currArray = arr;
     currArray.push(values);
     updateArr(currArray);
     dataupload(currArray);
   };
-
-  // useEffect(() => {
-  //   dataupload();
-  // }, [arr]);
 
   const updatenote = () => {
     console.log(values);
@@ -63,7 +57,7 @@ function NoteModal(props) {
 
   return (
     <>
-      <Dialog open={open} maxWidth="xl">
+      <Dialog open={open} maxWidth="xl" className="dialog">
         <div className="edit-modal">
           <Box
             component="form"
@@ -88,8 +82,6 @@ function NoteModal(props) {
             />
             <textarea
               style={{
-                // height: "270% !important",
-                width: "45.6rem",
                 resize: "none",
                 fontSize: "1.1rem",
               }}

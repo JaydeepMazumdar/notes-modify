@@ -18,9 +18,6 @@ function WorkingArea(props) {
   const [modal, setModal] = useState(false);
   const [values, setValues] = useState({});
   const [arr, updateArr] = useState([]);
-  // const [fetch, setfetch] = useState([...notes]);
-
-  // console.log(fetch);
 
   useEffect(() => {
     const getData = async () => {

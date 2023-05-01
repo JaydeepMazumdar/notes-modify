@@ -60,3 +60,25 @@
   color: red !important;
   text-decoration: none;
 }
+
+@media (max-width : 600px)
+{
+  .work-area{
+    margin: 0.5rem auto;
+  }
+  .notes-window{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: fit-content;
+    padding: 0;
+  }   
+  
+  .note{
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .addnote-btn{
+    position: fixed;
+  }
+}

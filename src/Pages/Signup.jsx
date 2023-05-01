@@ -172,6 +172,11 @@ function Signup() {
               </Link>
             </div>
           </div>
+          <div className="signup-close out-close">
+              <Link to="/">
+                <CloseRoundedIcon />
+              </Link>
+          </div>
         </div>
         <Snack
           type={snacktext.type}

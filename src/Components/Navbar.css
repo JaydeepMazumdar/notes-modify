@@ -22,11 +22,28 @@ nav{
     cursor: pointer;
 }
 
-/* .auth-box{
-    margin-right: 2rem;
-} */
-
 .auth-box .auth-btn{
     border-radius: 20px;
     margin: 0.2rem;
+}
+
+@media (max-width: 600px)
+{
+    nav{
+        padding:0.5rem;
+    }
+
+    .logo{
+        width: 12rem;
+        background-size: 10rem;
+    }
+    
+    .auth-box{
+        width: 25rem;
+    }
+
+    .auth-box .auth-btn{
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
 }

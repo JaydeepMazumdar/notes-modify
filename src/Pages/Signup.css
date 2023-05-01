@@ -58,10 +58,35 @@
     right: 1rem;
 }
 
+.out-close{
+    display: none;
+}
+
 .err-msg{
     color: red;
     font-size: 0.7rem;
     width: 100%;
     margin: auto;
     margin-top: 2rem;    
+}
+
+@media (max-width: 1024px){
+    .signup-box .signup-image{
+        display: none;
+    }
+    .signup-creds{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .signup-box{
+        width: 80%;
+        padding: 1rem;
+    }
+    .out-close{
+        display: block;
+    }
 }

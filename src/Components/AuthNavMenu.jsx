@@ -25,22 +25,20 @@ function AuthNavMenu(props) {
   };
 
   const navigate = useNavigate();
-  
+
   const Navigating = () => {
     navigate("/");
   };
 
-  
-
   const handleLogout = () => {
     signOut(auth)
-      .then(async() => {
+      .then(async () => {
         console.log("logged Out ");
-        setUsername("")
+        setUsername("");
         setTimeout(Navigating, 2000);
       })
       .catch((err) => {
-        console.log("Something went wrong !!!...")
+        console.log("Something went wrong !!!...");
       });
   };
 
@@ -87,17 +85,17 @@ function AuthNavMenu(props) {
                 </Menu>
               </IconButton>
             </Tooltip>
+            <Button
+              variant="contained"
+              className="logout"
+              startIcon=<PowerSettingsNewRoundedIcon />
+              endIcon=<ArrowForwardIosRoundedIcon />
+              onClick={handleLogout}
+              style={{ background: "#7B3F00", color: "#FFD700" }}
+            >
+              Logout
+            </Button>
           </div>
-          <Button
-            variant="contained"
-            className="logout"
-            startIcon=<PowerSettingsNewRoundedIcon />
-            endIcon=<ArrowForwardIosRoundedIcon />
-            onClick={handleLogout}
-            style={{ background: "#7B3F00", color: "#FFD700" }}
-          >
-            Logout
-          </Button>
         </div>
       </nav>
     </>
