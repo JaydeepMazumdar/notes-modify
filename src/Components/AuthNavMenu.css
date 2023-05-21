@@ -15,7 +15,6 @@
 .menu-list{
     padding: 0.5rem 1rem !important;
     margin: 2rem 0;
-    height: 12rem !important;
 }
 
 .divider{
@@ -24,6 +23,21 @@
     margin: 0.2rem 0 !important;
     margin: auto;
 
+}
+
+.settings-icons{
+    margin-right: 1rem;
+}
+
+.expandicons{
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+.listicons{
+    cursor: pointer !important;
+    text-decoration: none !important;
+    color: grey !important;
 }
 
 @media (max-width: 600px)

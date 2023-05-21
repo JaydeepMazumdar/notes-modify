@@ -32,11 +32,12 @@
     margin: 1rem;
     padding: 0.7rem 1rem;
     background-color: #C0C2C9;
-    color: beige;
+    color: rgb(197, 100, 100);
 }
 
 .home-text .exp-btn:hover{
     transform: scale(1.1);
+    color: beige;
 }
 
 .arrow-icon{

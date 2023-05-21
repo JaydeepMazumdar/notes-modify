@@ -21,8 +21,9 @@ import { auth } from "../firebase";
 import "./Login.css";
 
 function Login(props) {
-  const [showPassword, setShowPassword] = useState(false);
+  const { username, setUsername } = props;
 
+  const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
@@ -61,9 +62,11 @@ function Login(props) {
     setErrmsg("");
     setLoginload(true);
     signInWithEmailAndPassword(auth, values.email, values.password)
-    .then(async (res) => {
-      setLoginload(false);
-      setSnacktext({
+      .then(async (res) => {
+        setLoginload(false);
+        setUsername(res.user.displayName);
+        console.log(username);
+        setSnacktext({
           type: "success",
           msg: "Welcome to Demo Notes ✨",
         });
@@ -74,7 +77,7 @@ function Login(props) {
         setLoginload(false);
         if (
           err.message === "Firebase: Error (auth/user-not-found)." ||
-          err.message === "Firebase: Error (auth/wrong-password)"
+          err.message === "Firebase: Error (auth/wrong-password)."
         ) {
           setSnacktext({
             type: "error",
@@ -95,19 +98,17 @@ function Login(props) {
         handleSignupSnack();
       })
       .catch((err) => {
-        if(err.message === "Firebase: Error (auth/missing-email).")
-        {
+        if (err.message === "Firebase: Error (auth/missing-email).") {
           setSnacktext({
             type: "error",
             msg: "Please provide your registered email to retrieve your password ...",
           });
+        } else {
+          setSnacktext({
+            type: "error",
+            msg: "Something Went Wrong !!!... 😞",
+          });
         }
-        else{
-        setSnacktext({
-          type: "error",
-          msg: "Something Went Wrong !!!... 😞",
-        });
-      }
         handleSignupSnack();
       });
   };
@@ -177,7 +178,13 @@ function Login(props) {
                 </div>
               </Box>
               <div className="forgot-pass">
-                <Button variant="outlined" className="forgot-btn" onClick={handleForgotpass} >Forgot Password</Button>
+                <Button
+                  variant="outlined"
+                  className="forgot-btn"
+                  onClick={handleForgotpass}
+                >
+                  Forgot Password
+                </Button>
               </div>
               <div className="err-msg">{errmsg}</div>
             </div>
@@ -190,9 +197,9 @@ function Login(props) {
             </div>
           </div>
           <div className="login-close out-close">
-              <Link to="/">
-                <CloseRoundedIcon />
-              </Link>
+            <Link to="/">
+              <CloseRoundedIcon />
+            </Link>
           </div>
         </div>
         <Snack

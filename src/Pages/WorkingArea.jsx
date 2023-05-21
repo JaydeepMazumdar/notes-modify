@@ -3,7 +3,6 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import NoteModal from "../Components/NoteModal";
-// import notes from "../Assests/Lists/data";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -24,7 +23,6 @@ function WorkingArea(props) {
       const docRef = doc(db, "users", props.email);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         updateArr([...docSnap.data().array]);
       } else {
         console.log("No such document!");

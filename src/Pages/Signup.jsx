@@ -12,7 +12,10 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import Snack from "../Components/Snackbar";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import "./Signup.css";
@@ -60,7 +63,7 @@ function Signup() {
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then(async (res) => {
         const user = res.user;
-        await updateProfile(user, { displayName: values.username });
+        updateProfile(user, { displayName: values.username });
         setSignupload(false);
         setSnacktext({
           type: "success",
@@ -173,9 +176,9 @@ function Signup() {
             </div>
           </div>
           <div className="signup-close out-close">
-              <Link to="/">
-                <CloseRoundedIcon />
-              </Link>
+            <Link to="/">
+              <CloseRoundedIcon />
+            </Link>
           </div>
         </div>
         <Snack
