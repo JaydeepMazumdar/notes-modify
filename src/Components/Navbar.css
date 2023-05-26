@@ -39,7 +39,8 @@ nav{
     }
     
     .auth-box{
-        width: 25rem;
+        width: 10rem;
+        /* background: #000 */
     }
 
     .auth-box .auth-btn{

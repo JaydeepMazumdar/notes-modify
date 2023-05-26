@@ -85,6 +85,7 @@
     .signup-box{
         width: 80%;
         padding: 1rem;
+        position: relative;
     }
     .out-close{
         display: block;

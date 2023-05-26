@@ -23,6 +23,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import Snack from "../Components/Snackbar";
 import Divider from "@mui/material/Divider";
 import UpdateModal from "./updateModal";
 import DeleteModal from "./DeleteModal";
@@ -42,6 +43,17 @@ function AuthNavMenu(props) {
     setAnchorEl(null);
   };
 
+  const [openSnack, setOpenSnack] = useState(false);
+  const [snacktext, setSnacktext] = useState({
+    type: "",
+    msg: "",
+  });
+
+  const handleSignupSnack = () => {
+    setOpenSnack(true);
+  };
+
+
   const navigate = useNavigate();
 
   const Navigating = () => {
@@ -49,15 +61,28 @@ function AuthNavMenu(props) {
   };
 
   const handleLogout = () => {
-    signOut(auth)
+
+    setSnacktext({
+      type: "info",
+      msg: "Redirecting to home page ...",
+    });
+    handleSignupSnack();
+    const logout = () =>{ signOut(auth)
       .then(async () => {
         console.log("logged Out ");
         setUsername("");
         setTimeout(Navigating, 2000);
       })
       .catch((err) => {
+        setSnacktext({
+          type: "error",
+          msg: "Something went wrong ...🥺",
+        });
+        handleSignupSnack();
         console.log("Something went wrong !!!...");
-      });
+      });}
+
+      setTimeout(logout,3000);
   };
 
   const updatepass = () => {
@@ -176,6 +201,12 @@ function AuthNavMenu(props) {
       </nav>
       <UpdateModal open={openUpdate} setOpen={setopenUpdate} />
       <DeleteModal open={openDeleteModal} setOpen={setopenDeleteModal} />
+      <Snack
+          type={snacktext.type}
+          msg={snacktext.msg}
+          open={openSnack}
+          setOpen={setOpenSnack}
+        />
     </>
   );
 }

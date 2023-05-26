@@ -29,11 +29,10 @@ function WorkingArea(props) {
       }
     };
     getData();
-  }, [props.email]);
+  },[props.email]);
 
   const dataupload = (array) => {
     const cityRef = doc(db, "users", props.email);
-    console.log(array);
     setDoc(cityRef, {array});
   };
 
@@ -48,9 +47,7 @@ function WorkingArea(props) {
   
   const deleteNote = (id) =>{
     let curr = arr;
-    console.log(id);
     curr=curr.filter((items) => items.id !== id);;
-    console.log(curr);
     updateArr(curr);
     dataupload(curr);
   }
@@ -85,7 +82,6 @@ function WorkingArea(props) {
           color="primary"
           id = {item.id}
           onClick={(e) => {
-            console.log(e.target.id)
             deleteNote(e.target.id);
           }}
         >
@@ -98,6 +94,7 @@ function WorkingArea(props) {
   return (
     <>
       <div className="work-area">
+          <h3 style={arr.length === 0  ? {display: "block"} : {display: "none"}}>Please add notes to view here...</h3>
         <div className="notes-window">{rendernotes}</div>
         <div className="addnote-btn">
           <Tooltip title="Add Note" placement="top">

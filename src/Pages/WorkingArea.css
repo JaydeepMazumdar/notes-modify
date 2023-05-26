@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+
 .work-area {
   width: 90vw;
   height: 80vh;
   margin: 2rem auto;
   border-radius: 30px;
   position: relative;
+  background: lavender;
+  text-align: center;
+  color: gray;
+  font-size: 2.5rem;
+}
+.work-area h3{
+  font-family: "Mogra", cursive;
+  font-weight: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .addnote-btn {
@@ -25,12 +39,16 @@
 .notes-window {
   display: flex;
   font-size: 0;
+  padding: 2rem;
   flex-wrap: wrap;
+  gap: 2rem;
   border-radius: 30px;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
   justify-content: center;
+  background: transparent;
+  opacity: 1 !important;
 }
 
 .notes-window::-webkit-scrollbar {
@@ -41,15 +59,14 @@
   display: flex;
   width: 30%;
   height: 10rem;
-  margin: 2rem 0 0 2rem;
   flex-direction: column;
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 .note-content {
-    height: 7rem;
-    background: beige !important;
-    overflow: hidden;
+  height: 7rem;
+  background: beige !important;
+  overflow: hidden;
 }
 
 .note-delete {
@@ -61,24 +78,25 @@
   text-decoration: none;
 }
 
-@media (max-width : 600px)
-{
-  .work-area{
-    margin: 0.5rem auto;
+@media (max-width: 600px) {
+  .work-area {
+    margin: 7rem auto;
   }
-  .notes-window{
+  .notes-window {
+    margin: 2rem 0;
+    background: lavender;
     flex-direction: column;
     flex-wrap: nowrap;
     height: fit-content;
     padding: 0;
-  }   
-  
-  .note{
+  }
+
+  .note {
     width: 90%;
     margin: 1rem auto;
   }
 
-  .addnote-btn{
+  .addnote-btn {
     position: fixed;
   }
 }

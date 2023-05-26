@@ -15,6 +15,7 @@ import Snack from "../Components/Snackbar";
 import {
   createUserWithEmailAndPassword,
   updateProfile,
+  // sendEmailVerification,
 } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
@@ -54,12 +55,14 @@ function Signup() {
   };
 
   const handleSubmission = (e) => {
+    e.preventDefault();
     if (!values.username || !values.email || !values.password) {
       setErrmsg("Please fill all the required fields");
       return;
     }
     setErrmsg("");
     setSignupload(true);
+
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then(async (res) => {
         const user = res.user;

@@ -22,7 +22,7 @@
     overflow-y: hidden;
     margin: 0.2rem 0 !important;
     margin: auto;
-
+    
 }
 
 .settings-icons{
@@ -42,7 +42,12 @@
 
 @media (max-width: 600px)
 {
-
+    .auth-nav{
+        position: fixed;
+        z-index: 1000;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    }
+    
     .logout-menu{
         flex-direction: column;
         margin-left: -3rem;

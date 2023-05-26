@@ -43,7 +43,6 @@ function NoteModal(props) {
   };
 
   const updatenote = () => {
-    console.log(values);
     let curr = arr;
     curr.forEach((currentValue) => {
       if (currentValue.id === values.id) {
