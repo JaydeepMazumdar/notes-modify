@@ -1,3 +1,9 @@
+# Website Link :
+ (https://fir-notes-0081.web.app/)
+
+# Description of this project :
+This project is a notes app website build using React.js, Material UI, Firebase Authentication and Firebase Firestore storage. Users can create account and use this application to store notes, securely. This project is completely responsive, I hope you like it....😊.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
